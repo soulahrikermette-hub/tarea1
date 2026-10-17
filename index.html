@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro de alumnos - Matrícula</title>
+</head>
+<body>
+  <h1>Registro de alumnos</h1>
+  <form id="registro">
+    <label>Nombres <input type="text" name="nombres" required></label><br>
+    <label>Apellidos <input type="text" name="apellidos" required></label><br>
+    <label>DNI <input type="text" name="dni" required pattern="\d{8}" maxlength="8" title="8 dígitos"></label><br>
+    <label>Correo <input type="email" name="correo" required></label><br>
+    <label>Carrera
+      <select name="carrera" required>
+        <option value="">-- Selecciona --</option>
+        <option>Ingeniería de Sistemas</option>
+        <option>Ingeniería de Software</option>
+        <option>Ingeniería Industrial</option>
+      </select>
+    </label><br>
+    <button type="submit">Registrar</button>
+  </form>
+  <p id="mensaje"></p>
+  <script>
+    document.getElementById("registro").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const nombre = this.nombres.value + " " + this.apellidos.value;
+      document.getElementById("mensaje").textContent = "Alumno " + nombre + " registrado correctamente.";
+      this.reset();
+    });
+  </script>
+</body>
+</html>
