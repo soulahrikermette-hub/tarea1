@@ -8,7 +8,6 @@ Construir una página web sencilla donde un alumno pueda registrarse y matricula
 ## Integrantes
 - Kermit
 - Ccahuana Huillca Giancarlo
-- Aparcana Mamani Rodrigo Alonso
 
 ## Cómo usarlo
 1. Clona el repositorio: `git clone https://github.com/soulahrikermette-hub/tarea1.git`
