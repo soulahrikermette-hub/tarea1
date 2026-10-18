@@ -26,7 +26,11 @@
   <script>
     document.getElementById("registro").addEventListener("submit", function (e) {
       e.preventDefault();
-      const nombre = this.nombres.value + " " + this.apellidos.value;
+      if (!/^\d{8}$/.test(this.dni.value)) {
+        document.getElementById("mensaje").textContent = "El DNI debe tener exactamente 8 dígitos.";
+        return;
+      }
+      const nombre = this.nombres.value.trim() + " " + this.apellidos.value.trim();
       document.getElementById("mensaje").textContent = "Alumno " + nombre + " registrado correctamente.";
       this.reset();
     });
